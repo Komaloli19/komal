@@ -3,116 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Komal Oli | Junior System Administrator</title>
+<title>Komal Oli — Systems &amp; Network Administrator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#07111f;color:#eaf2ff;line-height:1.6}
-a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.95);border-bottom:1px solid #20324a;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:21px;font-weight:700}.logo span{color:#39d5ff}
-nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
-nav a:hover{color:#39d5ff}
-.hero{min-height:82vh;display:flex;align-items:center;padding:70px 7%;background:radial-gradient(circle at 80% 20%,#12385b 0,#07111f 45%)}
-.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin:15px 0}
-.hero h1 span{color:#39d5ff}.hero p{max-width:720px;color:#b9c8dc;font-size:19px}
-.badge{display:inline-block;border:1px solid #2e526f;padding:8px 14px;border-radius:30px;color:#72dcff}
-.buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
-.btn{padding:12px 20px;border-radius:8px;background:#39d5ff;color:#06111d;font-weight:700}
-.btn.alt{background:transparent;color:#eaf2ff;border:1px solid #34516e}
-section{padding:75px 7%}.section-title{font-size:34px;margin-bottom:12px}.section-sub{color:#9eb0c6;margin-bottom:32px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:#0d1b2c;border:1px solid #203650;border-radius:14px;padding:24px}
-.card h3{margin-bottom:10px;color:#72dcff}.card p,.card li{color:#b9c8dc}
-.card ul{padding-left:20px}
-.skills span{display:inline-block;background:#142940;border:1px solid #284662;border-radius:20px;padding:8px 12px;margin:5px;color:#dcecff}
-.timeline{border-left:2px solid #39d5ff;padding-left:24px}
-.item{margin-bottom:28px}.item h3{font-size:20px}.item small{color:#72dcff}
-footer{text-align:center;padding:30px;border-top:1px solid #20324a;color:#8fa3ba}
-@media(max-width:700px){nav{align-items:flex-start;gap:10px;flex-direction:column}nav ul{gap:12px;font-size:14px}.hero{min-height:75vh}}
+  :root{
+    --bg:#0e1520; --panel:#141d2b; --line:#263449;
+    --text:#e4eaf4; --muted:#8b98ac;
+    --blue:#5b8def; --amber:#f5a623;
+  }
+  html{scroll-behavior:smooth;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0) 0 0/28px 28px,
+      var(--bg);
+    color:var(--text); font-family:'Inter',sans-serif; line-height:1.65;
+  }
+  .display{font-family:'Space Grotesk',sans-serif;}
+  a{color:var(--blue); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 28px;}
+
+  nav{padding:22px 0;}
+  nav .wrap{display:flex; justify-content:space-between; align-items:center;}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px;}
+  .brand span{color:var(--blue);}
+  .navlinks{display:flex; gap:26px; font-size:14px;}
+  .navlinks a{color:var(--muted);}
+  .navlinks a:hover{color:var(--text); text-decoration:none;}
+
+  header.hero{padding:56px 0 60px; position:relative;}
+  .tag{display:inline-block; font-size:13px; color:var(--amber); border:1px solid rgba(245,166,35,.35); background:rgba(245,166,35,.08); padding:5px 12px; border-radius:20px; margin-bottom:22px;}
+  h1{font-family:'Space Grotesk',sans-serif; font-size:46px; font-weight:700; line-height:1.1; margin-bottom:14px;}
+  h1 .accent{color:var(--blue);}
+  .lede{color:var(--muted); font-size:16.5px; max-width:58ch; margin-bottom:30px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{font-size:14px; font-weight:600; padding:11px 20px; border-radius:8px;}
+  .btn.primary{background:var(--blue); color:#0e1520;}
+  .btn.primary:hover{opacity:.9; text-decoration:none;}
+  .btn.ghost{border:1px solid var(--line); color:var(--text);}
+  .btn.ghost:hover{border-color:var(--blue); text-decoration:none;}
+
+  section{padding:50px 0; border-top:1px solid var(--line); scroll-margin-top:24px;}
+  .sec-label{font-size:13px; color:var(--blue); font-weight:600; margin-bottom:8px;}
+  h2{font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:600; margin-bottom:26px;}
+
+  .node-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .node{background:var(--panel); padding:20px; position:relative;}
+  .node::before{content:''; position:absolute; top:20px; left:20px; width:8px; height:8px; border-radius:50%; background:var(--blue); box-shadow:0 0 10px var(--blue);}
+  .node h3{font-size:14.5px; font-weight:600; margin:0 0 6px 20px;}
+  .node p{font-size:13.5px; color:var(--muted); margin-left:20px;}
+
+  .proj{background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:8px; padding:22px; margin-bottom:16px; transition:border-color .15s;}
+  .proj:hover{border-left-color:var(--amber);}
+  .proj-title{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin-bottom:8px;}
+  .proj-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;}
+  .ptag{font-size:11.5px; color:var(--amber); border:1px solid rgba(245,166,35,.3); padding:3px 9px; border-radius:12px;}
+  .proj p{color:var(--muted); font-size:14.5px; margin-bottom:12px;}
+  .proj a{font-size:13.5px; font-weight:600;}
+
+  .tl{position:relative; padding-left:26px;}
+  .tl::before{content:''; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:var(--line);}
+  .tl-item{position:relative; margin-bottom:22px;}
+  .tl-item::before{content:''; position:absolute; left:-26px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--bg); border:2px solid var(--blue);}
+  .tl-date{font-size:12.5px; color:var(--blue); font-weight:600; margin-bottom:3px;}
+  .tl-title{font-weight:600; font-size:15px; margin-bottom:2px;}
+  .tl-sub{color:var(--muted); font-size:13.5px;}
+
+  footer{padding:50px 0 70px; border-top:1px solid var(--line);}
+  .contact-grid{display:flex; flex-wrap:wrap; gap:34px; margin-bottom:22px; font-size:14.5px;}
+  .contact-grid div span{display:block; color:var(--muted); font-size:12px; margin-bottom:4px;}
+  .foot-note{color:var(--muted); font-size:12.5px;}
+
+  @media(max-width:560px){
+    h1{font-size:32px;}
+    .brand{font-size:22px;}
+    .node-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
+
 <nav>
-  <div class="logo">Kamala <span>Oli</span></div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="wrap">
+    <div class="brand">Komal <span>Oli</span></div>
+    <div class="navlinks">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
 
 <header class="hero">
-  <div>
-    <span class="badge">Junior System Administrator • Linux • Networking • AWS</span>
-    <h1>Building reliable<br><span>IT infrastructure.</span></h1>
-    <p>I am Kamala Oli, a BSc Computer Science graduate focused on system administration, Linux, Windows Server, networking, cloud and cybersecurity. I enjoy learning through hands-on labs and practical IT projects.</p>
-    <div class="buttons">
-      <a class="btn" href="#projects">View Projects</a>
-      <a class="btn alt" href="#contact">Contact Me</a>
+  <div class="wrap">
+    <div class="tag">Open to work · Nashik, Maharashtra</div>
+    <h1>Building reliable IT <span class="accent">infrastructure</span>, one lab at a time.</h1>
+    <p class="lede">BSc Computer Science graduate (SPPU, 8.89 CGPA) with hands-on training across Linux, Windows Server, networking, and cloud. I rebuild real enterprise environments to learn how they actually work, then document every step.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://github.com/Komaloli19" target="_blank" rel="noopener">GitHub profile</a>
     </div>
   </div>
 </header>
 
-<section id="about">
-  <h2 class="section-title">About Me</h2>
-  <p class="section-sub">A fresher building practical skills for IT infrastructure and support roles.</p>
-  <div class="card">
-    <p>I completed my BSc in Computer Science from Savitribai Phule Pune University with 8.89 CGPA (A+). My technical training includes Linux administration, RHCSA, MCSA, CCNA, hardware and networking, AWS cloud and cybersecurity. I am interested in Junior System Administrator, Linux Administrator, IT Support and Network Support opportunities.</p>
-  </div>
-</section>
-
 <section id="skills">
-  <h2 class="section-title">Technical Skills</h2>
-  <p class="section-sub">Core technologies and administration areas.</p>
-  <div class="grid">
-    <div class="card"><h3>Linux Administration</h3><p>RHEL, CLI, Bash, users & groups, permissions, services, storage, networking and troubleshooting.</p></div>
-    <div class="card"><h3>Windows Server</h3><p>Active Directory, user & group management, Group Policy, NTFS/share permissions, RDP and troubleshooting.</p></div>
-    <div class="card"><h3>Networking</h3><p>TCP/IP, DNS, DHCP, VLANs, routing & switching, network security, firewalls and troubleshooting.</p></div>
-    <div class="card"><h3>AWS & Cloud</h3><p>Cloud fundamentals, EC2 and basic AWS infrastructure concepts.</p></div>
-    <div class="card"><h3>IT Support</h3><p>Hardware/software troubleshooting, system configuration, user support and issue resolution.</p></div>
-    <div class="card"><h3>Programming & DB</h3><p>C, Python, PHP, HTML, JavaScript, DBMS and MySQL.</p></div>
-  </div>
-  <div class="skills" style="margin-top:24px">
-    <span>RHCSA</span><span>MCSA</span><span>CCNA</span><span>Linux</span><span>Windows Server</span><span>AWS</span><span>Cybersecurity</span><span>TCP/IP</span><span>DNS/DHCP</span><span>VLAN</span><span>Active Directory</span>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Projects & Practical Labs</h2>
-  <p class="section-sub">Hands-on work that demonstrates practical learning.</p>
-  <div class="grid">
-    <div class="card"><h3>Linux Server Monitoring System</h3><p>Monitoring-focused Linux project covering system resources, disk, CPU, memory, services and server health concepts.</p></div>
-    <div class="card"><h3>Enterprise Network Lab</h3><p>CCNA practical lab covering IP addressing, VLANs, routing, switching and connectivity troubleshooting.</p></div>
-    <div class="card"><h3>Active Directory Lab</h3><p>Windows Server administration practice with users, groups, policies, permissions and client-server concepts.</p></div>
-    <div class="card"><h3>Airline Ticket Management System</h3><p>College project developed using PHP with database concepts for airline ticket management.</p></div>
-  </div>
-</section>
-
-<section id="education">
-  <h2 class="section-title">Education & Training</h2>
-  <div class="timeline">
-    <div class="item"><small>2023 – 2026</small><h3>BSc Computer Science</h3><p>Savitribai Phule Pune University • 8.89 CGPA • A+ Grade</p></div>
-    <div class="item"><small>Professional Training</small><h3>AWS Cloud & Cybersecurity</h3><p>Netleap IT Training and Solution</p></div>
-    <div class="item"><small>Technical Modules</small><h3>Hardware Networking • CCNA • RHCSA • MCSA</h3><p>Practical lab-oriented technical training.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p class="section-sub">Open to entry-level opportunities in IT infrastructure and support.</p>
-  <div class="card">
-    <p><strong>Email:</strong> olikamala264@gmail.com</p>
-    <p style="margin-top:8px"><strong>Location:</strong> Nashik, Maharashtra, India</p>
-    <div class="buttons">
-      <a class="btn" href="https://github.com/Komaloli19" target="_blank">GitHub</a>
-      <a class="btn alt" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+  <div class="wrap">
+    <div class="sec-label">Capabilities</div>
+    <h2>What I work with</h2>
+    <div class="node-grid">
+      <div class="node"><h3>Linux Administration</h3><p>RHEL, CLI, Bash, users &amp; groups, permissions, services, storage, troubleshooting</p></div>
+      <div class="node"><h3>Windows Server</h3><p>Active Directory, Group Policy, user/group management, NTFS &amp; share permissions, RDP</p></div>
+      <div class="node"><h3>Networking</h3><p>TCP/IP, DNS, DHCP, VLANs, routing &amp; switching, firewalls, network security</p></div>
+      <div class="node"><h3>Cloud</h3><p>AWS fundamentals, EC2, basic cloud infrastructure concepts</p></div>
+      <div class="node"><h3>IT Support</h3><p>Hardware &amp; software troubleshooting, system configuration, end-user support</p></div>
+      <div class="node"><h3>Programming &amp; DB</h3><p>C, Python, PHP, HTML/JS, MySQL and core DBMS concepts</p></div>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Kamala Oli • Junior System Administrator Portfolio</footer>
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">Hands-on work</div>
+    <h2>Projects</h2>
+
+    <div class="proj">
+      <div class="proj-title">Active Directory Lab</div>
+      <div class="proj-tags"><span class="ptag">Windows Server 2022</span><span class="ptag">Active Directory</span><span class="ptag">VMware</span></div>
+      <p>Built a Windows Server domain from scratch — OU structure, user and group lifecycle management, Group Policy for password and access control, and NTFS/share permission troubleshooting.</p>
+    </div>
+
+    <div class="proj">
+      <div class="proj-title">Enterprise Network Lab</div>
+      <div class="proj-tags"><span class="ptag">TCP/IP</span><span class="ptag">VLANs</span><span class="ptag">Routing &amp; Switching</span></div>
+      <p>A CCNA-style practical lab covering IP addressing design, VLAN segmentation, inter-VLAN routing, and connectivity troubleshooting across switches and routers.</p>
+    </div>
+
+    <div class="proj">
+      <div class="proj-title">Linux Server Monitoring</div>
+      <div class="proj-tags"><span class="ptag">RHEL</span><span class="ptag">Bash</span><span class="ptag">System Monitoring</span></div>
+      <p>Shell-based monitoring for a Linux server — tracking CPU, memory, disk usage, and service health with simple scripted checks.</p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <div class="sec-label">Background</div>
+    <h2>Education &amp; training</h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-date">2023 – 2026</div><div class="tl-title">BSc Computer Science</div><div class="tl-sub">Savitribai Phule Pune University · 8.89 CGPA (A+)</div></div>
+      <div class="tl-item"><div class="tl-date">Netleap IT</div><div class="tl-title">Windows Server / MCSA Training</div><div class="tl-sub">Active Directory, DNS, DHCP, Group Policy, Windows Firewall</div></div>
+      <div class="tl-item"><div class="tl-date">Netleap IT</div><div class="tl-title">Red Hat Linux Training</div><div class="tl-sub">File systems, users &amp; groups, permissions, basic networking</div></div>
+      <div class="tl-item"><div class="tl-date">Netleap IT</div><div class="tl-title">CCNA &amp; Networking Training</div><div class="tl-sub">TCP/IP, VLAN, NAT, ACL, routing &amp; switching</div></div>
+      <div class="tl-item"><div class="tl-date">Netleap IT</div><div class="tl-title">AWS Cloud &amp; Cybersecurity Training</div><div class="tl-sub">Cloud fundamentals, EC2, security basics</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-label">Let's talk</div>
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div><span>Email</span><a href="mailto:olikamala264@gmail.com">olikamala264@gmail.com</a></div>
+      <div><span>Location</span>Nashik, Maharashtra, India</div>
+      <div><span>GitHub</span><a href="https://github.com/Komaloli19" target="_blank" rel="noopener">github.com/Komaloli19</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/komal-oli" target="_blank" rel="noopener">linkedin.com/in/komal-oli</a></div>
+    </div>
+    <div class="foot-note">© 2026 Komal Oli · Open to Junior System Administrator, Linux Administrator, IT Support, and Network Support roles.</div>
+  </div>
+</footer>
+
 </body>
 </html>
