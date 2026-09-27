@@ -1,4 +1,4 @@
-### Hi, I'm Komal Oli 👋
+### Hi, I'm Kamala Oli 👋
 
 Aspiring **System Administrator / Network Engineer**, currently building hands-on
 skills in Linux, Windows Server, and networking through self-built lab environments.
