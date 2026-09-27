@@ -1,14 +1,13 @@
-# Komal Oli — Portfolio
+### Hi, I'm Komal Oli 👋
 
-My personal portfolio site, built to showcase my skills and hands-on labs in
-Linux, Windows Server, and networking as I work toward a System Administrator
-/ Network Engineer role.
+Aspiring **System Administrator / Network Engineer**, currently building hands-on
+skills in Linux, Windows Server, and networking through self-built lab environments.
 
-🔗 **Live site:** https://komaloli19.github.io/komal/
+- 🐧 Linux (RHEL) — file systems, users & permissions, troubleshooting
+- 🪟 Windows Server — Active Directory, Group Policy, DNS/DHCP
+- 🌐 Networking — TCP/IP, VLANs, routing & switching
+- ☁️ Cloud fundamentals — AWS, EC2
 
-## What's in this repo
-- `index.html` — the portfolio site itself
-- `Linux Basics.docx`, `Windows Fundamentals.docx` — personal study notes
-
-## Tech
-Plain HTML/CSS, hosted with GitHub Pages.
+📄 Portfolio: [komaloli19.github.io/komal](https://komaloli19.github.io/komal/)
+💼 LinkedIn: [linkedin.com/in/komal-oli](https://www.linkedin.com/in/komal-oli)
+📧 olikamala264@gmail.com
